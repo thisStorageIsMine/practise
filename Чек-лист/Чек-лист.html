@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чек-лист</title>
+    <link rel="stylesheet" href="Чек-лист.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Ваш ToDo лист!</h2>
+        <fieldset class="tasks">
+            <legend>Tasks</legend>
+
+        </fieldset>
+        <button onclick="window.modal.showModal(); renderDialog();">
+            Добавить таску
+        </button>
+    </div>
+
+    <dialog id="modal" role="dialog">
+        <textarea id="story" name="story" rows="5" cols="33" placeholder="Писать сюда" ></textarea>
+        <button onclick="window.modal.close();renderDialog(); renderTask();"> 
+            Сохранить
+        </button>
+    </dialog>
+    <script src="Чек-лист.js"></script>
+</body>
+</html>
+
+
