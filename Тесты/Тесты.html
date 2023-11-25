@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты</title>
     <link rel="stylesheet" href="Тесты.css">
-    <title>Document</title>
 </head>
 <body>
     <div class="wrapper">
-        <div class="input-questions">
-
+        <div class="block">
+            <label for="q_1">
+                В каком году начался четвертый крестовый поход?
+            </label>
+            <input type="text" id="q_1" placeholder="Ответ писать тут">
         </div>
-        <div class="radio-questions">
+        <div class="block">
+            <p>Дата дня рождения А.Н. Пахмутовой?</p>
+            
+            
+            <label for="q_2">
+                9 ноября 1929 г.
+                <input type="radio" name="bir" id="q_2" value="091129">
+            </label>
 
+            
+            <label for="q_3">
+                2 января 1935 г.
+                <input type="radio" name="bir" id="q_3" value="020135">
+            </label>
+
+            
+            <label for="q_4">
+                13 сентября 1925 г.
+                <input type="radio" name="bir" id="q_4" value="130925">
+            </label>
         </div>
-        <button>Проверить</button>
+        <button>Проверить!</button>
     </div>
+
     <script src="Тесты.js"></script>
 </body>
 </html>
