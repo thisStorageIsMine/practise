@@ -77,11 +77,11 @@ const checkIfSomebodyWin = ()  => {
 
     for(let item of winbos) {
         
-        if(isSubstringInWord(item,crossArr)) {
+        if(isSubstringInWord(item,crossArr) || (crossArr.includes("0") & crossArr.includes("4") & crossArr.includes("8")) || (crossArr.includes("2") & crossArr.includes("4") & crossArr.includes("6"))) {
             lastWords = "Победил крестик!";
             Modal(lastWords);
             break;
-        } else if(isSubstringInWord(item,circleArr) || (circleArr.includes("2") & circleArr.includes("4") & circleArr.includes("6"))){
+        } else if(isSubstringInWord(item,circleArr) || (circleArr.includes("2") & circleArr.includes("4") & circleArr.includes("6")) || (circleArr.includes("0") & circleArr.includes("4") & circleArr.includes("8"))){
             lastWords = "Победил нолик!";
             Modal(lastWords);
             break;
