@@ -6,12 +6,15 @@ const table = document.querySelector("table"),
 let player = true;
 const winbos  = [
     "012",
-    "048",
-    "147",
-    "258",
-    "246",
     "345",
-    "678"
+    "678", // горизонтальные все
+
+    "036",
+    "147",
+    "258", // Вертикальные все
+
+    "048",
+    "246"
 ];
 let lastWords;
 
@@ -73,17 +76,17 @@ const checkIfSomebodyWin = ()  => {
 
 
     for(let item of winbos) {
-        if(crossArr.length === 5 || circleArr.length ===5){
-            lastWords = "Ничья!";
-            Modal(lastWords);
-            break;
-        }
-        else if(isSubstringInWord(item,crossArr)) {
+        
+        if(isSubstringInWord(item,crossArr)) {
             lastWords = "Победил крестик!";
             Modal(lastWords);
             break;
-        } else if(isSubstringInWord(item,circleArr)){
+        } else if(isSubstringInWord(item,circleArr) || (circleArr.includes("2") & circleArr.includes("4") & circleArr.includes("6"))){
             lastWords = "Победил нолик!";
+            Modal(lastWords);
+            break;
+        } else if(crossArr.length === 5 || circleArr.length ===5){
+            lastWords = "Ничья!";
             Modal(lastWords);
             break;
         }
