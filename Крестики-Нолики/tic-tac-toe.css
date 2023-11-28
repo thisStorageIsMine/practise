@@ -127,6 +127,7 @@ tr {
     font-size: 2rem;
     color: rgb(58, 55, 55);
     letter-spacing: 1px;
+    user-select: none;
 }
 
 #dialog > button {
