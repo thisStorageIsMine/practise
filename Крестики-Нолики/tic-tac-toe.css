@@ -1,0 +1,143 @@
+:root {
+    --bgc:#f7f9f6;
+    --text:#1A1E15;
+    --secondary:#e0e6db;
+    --cross:#7a668f;
+    --circle:#d35f61;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bgc);
+    overflow: hidden;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tr {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.card {
+    width: 140px;
+    height: 140px;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s ease;
+    perspective: 1000px;
+}
+
+
+
+.front,
+.back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    transition: all 0.5s ease, filter 0.1s ease;
+    border-radius: 14px;
+}
+
+.front {
+    background-color: var(--secondary);
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: black;
+}
+
+.cross {
+    background-color: var(--cross);
+    
+}
+
+.circle {
+    background-color: var(--circle);
+}
+
+.circle::before {
+    position: absolute;
+    content: "";
+    inset: 10px;
+    border-radius: 50%;
+    border: 15px solid var(--secondary);
+}
+
+.cross::before,
+.cross::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 100px;
+    top: 20px;
+    right: 60px;
+    background-color:  var(--secondary);
+}
+
+.cross::after {
+    transform: rotate(-45deg);
+}
+
+.cross::before{
+    transform: rotate(45deg);
+}
+
+
+
+.card:hover:not(.rotate) > .front {
+    filter: brightness(50%);
+}
+
+.rotate .front {
+    transform: rotateY(180deg);
+}
+
+.rotate .back {
+    transform: rotateY(360deg);
+}
+
+#dialog {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 200px;
+    gap: 25px;
+    display: none;
+}
+
+#dialog > h3 {
+    font-size: 2rem;
+    color: rgb(58, 55, 55);
+    letter-spacing: 1px;
+}
+
+#dialog > button {
+    width: 150px;
+    padding: 1rem 2rem;
+    background-color: #1A1E15;
+    color: #f7f9f6;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#dialog .active-modal {
+    display: flex;
+}
