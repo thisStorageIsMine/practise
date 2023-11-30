@@ -37,7 +37,7 @@ tr {
     cursor: pointer;
     position: relative;
     transition: 0.4s ease;
-    perspective: 1000px;
+    perspective: 100px;
 }
 
 
