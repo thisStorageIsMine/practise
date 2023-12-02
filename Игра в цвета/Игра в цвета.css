@@ -1,0 +1,47 @@
+:root {
+    --bgc:#f7f9f6;
+    --text:#1A1E15;
+    --secondary:#e0e6db;
+    --cross:#7a668f;
+    --circle:#d35f61;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bgc);
+    overflow: hidden;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tr {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.card {
+    width: 140px;
+    height: 140px;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    perspective: 100px;
+}
